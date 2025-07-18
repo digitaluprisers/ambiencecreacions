@@ -15,7 +15,7 @@ const Apartments = () => {
       type: "2 BHK",
       size: "1250 - 1500 sq.ft.",
       image: "/assets/images/2bhk.jpeg",
-      price: "₹1.25 Cr onwards",
+      price: "₹3.6 Cr onwards",
       features: [
         "Spacious Master Bedroom", 
         "Attached Balcony", 
@@ -43,7 +43,7 @@ const Apartments = () => {
       type: "3 BHK",
       size: "1800 - 2100 sq.ft.",
       image: "/assets/images/3bhk.jpeg",
-      price: "₹1.75 Cr onwards",
+      price: "₹5.95 Cr onwards",
       features: [
         "Spacious Master Bedroom", 
         "Two Attached Balconies", 
@@ -73,7 +73,7 @@ const Apartments = () => {
       type: "4 BHK",
       size: "2400 - 2800 sq.ft.",
       image: "/assets/images/4bhk.jpeg",
-      price: "₹2.5 Cr onwards",
+      price: "₹8.5 Cr onwards",
       features: [
         "Luxurious Master Bedroom", 
         "Three Attached Balconies", 
