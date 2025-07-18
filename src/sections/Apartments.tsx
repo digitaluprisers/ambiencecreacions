@@ -13,7 +13,7 @@ const Apartments = () => {
     {
       id: 1,
       type: "2 BHK",
-      size: "1250 - 1500 sq.ft.",
+      size: "1380 sq.ft.",
       image: "/assets/images/2bhk.jpeg",
       price: "₹3.6 Cr onwards",
       features: [
@@ -41,7 +41,7 @@ const Apartments = () => {
     {
       id: 2,
       type: "3 BHK",
-      size: "1800 - 2100 sq.ft.",
+      size: "2781 - 3223 sq.ft.",
       image: "/assets/images/3bhk.jpeg",
       price: "₹5.95 Cr onwards",
       features: [
@@ -71,7 +71,7 @@ const Apartments = () => {
     {
       id: 3,
       type: "4 BHK",
-      size: "2400 - 2800 sq.ft.",
+      size: "3976 sq.ft.",
       image: "/assets/images/4bhk.jpeg",
       price: "₹8.5 Cr onwards",
       features: [
