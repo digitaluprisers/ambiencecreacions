@@ -2,11 +2,15 @@ import { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+// Removed Dialog imports for floor plan
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Check } from 'lucide-react';
 
-const Apartments = () => {
+interface ApartmentsProps {
+  onEnquire?: () => void;
+}
+
+const Apartments = ({ onEnquire }: ApartmentsProps) => {
   const [selectedApartment, setSelectedApartment] = useState(null);
 
   const apartmentTypes = [
@@ -130,20 +134,19 @@ const Apartments = () => {
               <Card className="border-0 shadow-none bg-transparent">
                 <CardContent className="p-0">
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    {/* Responsive: stack on mobile, side by side on desktop */}
                     <div>
                       <img 
                         src={apartment.image} 
                         alt="" 
-                        className="rounded-lg shadow-lg w-full h-auto mb-2 border-2 border-red-500" // debug border
+                        className="rounded-lg shadow-lg w-full h-auto mb-2"
                         onError={e => { e.currentTarget.style.display = 'none'; }}
                       />
                       {/* Render additional interior images if available */}
                       {apartment.interiorImages && (
                         <div className="grid grid-cols-1 gap-2 mt-2">
                           {apartment.interiorImages.map((img, idx) => (
-                            <img key={idx} src={img.src} alt="" className="rounded shadow w-full h-auto border-2 border-blue-500" // debug border
-                              onError={e => { e.currentTarget.style.display = 'none'; }}
-                            />
+                            <img key={idx} src={img.src} alt="" className="rounded shadow w-full h-auto" onError={e => { e.currentTarget.style.display = 'none'; }} />
                           ))}
                         </div>
                       )}
@@ -176,30 +179,10 @@ const Apartments = () => {
                         </ul>
                       </div>
                       
-                      <div className="space-x-4 pt-4">
-                        <Dialog>
-                          <DialogTrigger asChild>
-                            <Button variant="outline" className="border-gold text-gold hover:bg-gold hover:text-white">
-                              View Floor Plan
-                            </Button>
-                          </DialogTrigger>
-                          <DialogContent className="max-w-3xl">
-                            <DialogHeader>
-                              <DialogTitle>{apartment.type} Floor Plan</DialogTitle>
-                            </DialogHeader>
-                            <div className="mt-4">
-                              <img 
-                                src={apartment.floorPlan} 
-                                alt={`${apartment.type} Floor Plan`} 
-                                className="w-full h-auto"
-                              />
-                            </div>
-                          </DialogContent>
-                        </Dialog>
-                        
+                      <div className="space-x-4 pt-4 flex flex-col sm:flex-row gap-2 sm:gap-4">
                         <Button 
-                          onClick={scrollToContact}
-                          className="luxury-button"
+                          onClick={onEnquire}
+                          className="luxury-button w-full sm:w-auto"
                         >
                           Enquire Now
                         </Button>

@@ -110,7 +110,7 @@ export default function Index() {
         <Hero onBookSiteVisit={triggerExitPopup} />
         <About />
         <Features />
-        <Apartments />
+        <Apartments onEnquire={triggerExitPopup} />
         <Gallery />
         <Location />
         <Testimonials />
