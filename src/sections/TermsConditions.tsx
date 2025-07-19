@@ -1,10 +1,6 @@
 const TermsConditions = () => {
   return (
-<<<<<<< HEAD
-    <div className="space-y-6 text-gray-700 mt-24">
-=======
     <div className="space-y-6 text-gray-700">
->>>>>>> 92038dcce275492eec33835472d3ff77df0584b4
       <p>
         These Terms and Conditions were last updated on July 15, 2023.
       </p>

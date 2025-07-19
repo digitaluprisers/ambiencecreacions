@@ -1,10 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
-<<<<<<< HEAD
 import { Link } from 'react-router-dom';
-=======
->>>>>>> 92038dcce275492eec33835472d3ff77df0584b4
 
 interface HeaderProps {
   isSticky: boolean;
@@ -65,21 +62,13 @@ const Header = ({ isSticky, onBookSiteVisit }: HeaderProps) => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-<<<<<<< HEAD
             <Link to="/" className="flex items-center">
-=======
-            <a href="#hero" className="flex items-center">
->>>>>>> 92038dcce275492eec33835472d3ff77df0584b4
               <img 
                 src="https://www.ambiencecreacions.com/images/ambience.png" 
                 alt="Ambience Creacions Logo" 
                 className="h-12 w-auto"
               />
-<<<<<<< HEAD
             </Link>
-=======
-            </a>
->>>>>>> 92038dcce275492eec33835472d3ff77df0584b4
           </div>
 
           {/* Desktop menu */}
@@ -111,11 +100,7 @@ const Header = ({ isSticky, onBookSiteVisit }: HeaderProps) => {
               onClick={onBookSiteVisit}
               className="luxury-button"
             >
-<<<<<<< HEAD
               Inquire Now
-=======
-              Book a Site Visit
->>>>>>> 92038dcce275492eec33835472d3ff77df0584b4
             </Button>
           </div>
 
@@ -167,11 +152,7 @@ const Header = ({ isSticky, onBookSiteVisit }: HeaderProps) => {
               }}
               className="luxury-button w-full mt-4"
             >
-<<<<<<< HEAD
               Inquire Now
-=======
-              Book a Site Visit
->>>>>>> 92038dcce275492eec33835472d3ff77df0584b4
             </Button>
           </div>
         </div>
