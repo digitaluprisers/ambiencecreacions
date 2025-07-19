@@ -1,6 +1,6 @@
 const TermsConditions = () => {
   return (
-    <div className="space-y-6 text-gray-700 mt-24">
+    <div className="space-y-6 text-gray-700">
       <p>
         These Terms and Conditions were last updated on July 15, 2023.
       </p>

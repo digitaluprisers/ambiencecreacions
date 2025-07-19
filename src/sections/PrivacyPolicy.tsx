@@ -1,6 +1,6 @@
 const PrivacyPolicy = () => {
   return (
-    <div className="space-y-6 text-gray-700 mt-24">
+    <div className="space-y-6 text-gray-700">
       <p>
         This Privacy Policy was last updated on July 15, 2023.
       </p>
