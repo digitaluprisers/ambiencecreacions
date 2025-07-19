@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
@@ -58,6 +59,26 @@ const Hero = () => {
         });
     });
   }
+=======
+import { Button } from '@/components/ui/button';
+
+interface HeroProps {
+  onBookSiteVisit?: () => void;
+}
+
+const Hero = ({ onBookSiteVisit }: HeroProps) => {
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      const offset = 80;
+      const elementPosition = contactSection.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: elementPosition - offset,
+        behavior: 'smooth'
+      });
+    }
+  };
+>>>>>>> 92038dcce275492eec33835472d3ff77df0584b4
 
   return (
     <section 
@@ -69,6 +90,7 @@ const Hero = () => {
         backgroundPosition: 'center'
       }}
     >
+<<<<<<< HEAD
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           <div className="flex-1 text-center lg:text-left mt-24 lg:mt-0">
@@ -175,6 +197,29 @@ const Hero = () => {
           </div>
         </div>
       </div>
+=======
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-playfair mb-6">
+          Experience Luxury Living at <span className="text-gold">Ambience Creacions</span>
+        </h1>
+        
+        <p className="text-xl md:text-2xl mb-4">
+          Premium Residential Apartments in Sector 22, Gurugram
+        </p>
+        
+        <p className="text-lg mb-10 max-w-2xl mx-auto">
+          Where Comfort Meets Luxury - Discover Your Dream Home
+        </p>
+        
+        <Button 
+          onClick={onBookSiteVisit || scrollToContact}
+          className="luxury-button text-lg"
+        >
+          Book a Site Visit
+        </Button>
+      </div>
+      
+>>>>>>> 92038dcce275492eec33835472d3ff77df0584b4
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
         <a 
           href="#about" 

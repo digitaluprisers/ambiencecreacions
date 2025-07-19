@@ -15,7 +15,10 @@ import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Check, PhoneCall, Mail, Clock } from 'lucide-react';
 import emailjs from 'emailjs-com';
+<<<<<<< HEAD
 import { useNavigate } from 'react-router-dom';
+=======
+>>>>>>> 92038dcce275492eec33835472d3ff77df0584b4
 
 const formSchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
@@ -36,7 +39,10 @@ const LeadCapture = () => {
       message: '',
     },
   });
+<<<<<<< HEAD
   const navigate = useNavigate();
+=======
+>>>>>>> 92038dcce275492eec33835472d3ff77df0584b4
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     // TODO: Replace these with your actual EmailJS service/template/user IDs
@@ -52,7 +58,12 @@ const LeadCapture = () => {
       message: values.message || '',
     }, USER_ID)
       .then(() => {
+<<<<<<< HEAD
         navigate('/thank-you');
+=======
+        alert('Thank you! We have received your enquiry.');
+        form.reset();
+>>>>>>> 92038dcce275492eec33835472d3ff77df0584b4
       })
       .catch(() => {
         alert('There was an error sending your enquiry. Please try again.');
