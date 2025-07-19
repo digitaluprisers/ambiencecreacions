@@ -83,7 +83,7 @@ const Hero = () => {
             </p>
           </div>
           <div className="flex-1 w-full max-w-md bg-white bg-opacity-90 rounded-lg shadow-lg p-8 text-gray-900">
-            <h2 className="text-2xl font-bold mb-4 text-center text-gold">Book a Site Visit</h2>
+            <h2 className="text-2xl font-bold mb-4 text-center text-gold">Inquire Now</h2>
             <Form {...siteVisitForm}>
               <form onSubmit={siteVisitForm.handleSubmit(onSiteVisitSubmit)} className="space-y-4">
                 <FormField
@@ -168,7 +168,7 @@ const Hero = () => {
                   )}
                 />
                 <Button type="submit" className="luxury-button w-full mt-2">
-                  Book Visit
+                  Inquire Now
                 </Button>
               </form>
             </Form>

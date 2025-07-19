@@ -100,7 +100,7 @@ const Header = ({ isSticky, onBookSiteVisit }: HeaderProps) => {
               onClick={onBookSiteVisit}
               className="luxury-button"
             >
-              Book a Site Visit
+              Inquire Now
             </Button>
           </div>
 
@@ -152,7 +152,7 @@ const Header = ({ isSticky, onBookSiteVisit }: HeaderProps) => {
               }}
               className="luxury-button w-full mt-4"
             >
-              Book a Site Visit
+              Inquire Now
             </Button>
           </div>
         </div>
