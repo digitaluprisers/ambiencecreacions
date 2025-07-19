@@ -120,6 +120,7 @@ export default function Index() {
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Header isSticky={isSticky} />
+      
       <main className="flex-grow">
         <Hero />
         <About />
@@ -130,7 +131,9 @@ export default function Index() {
         <Testimonials />
         <LeadCapture />
       </main>
+
       <Footer />
+
       {/* Policy Dialogs */}
       <Dialog open={policyDialog !== null} onOpenChange={closePolicyDialog}>
         <DialogContent className="max-w-3xl max-h-[80vh] overflow-y-auto">
@@ -139,6 +142,7 @@ export default function Index() {
               {policyDialog === 'privacy' ? 'Privacy Policy' : 'Terms & Conditions'}
             </DialogTitle>
           </DialogHeader>
+          
           {policyDialog === 'privacy' ? (
             <PrivacyPolicy />
           ) : (

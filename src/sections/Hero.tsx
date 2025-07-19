@@ -59,18 +59,6 @@ const Hero = () => {
     });
   }
 
-  const scrollToContact = () => {
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      const offset = 80;
-      const elementPosition = contactSection.getBoundingClientRect().top + window.scrollY;
-      window.scrollTo({
-        top: elementPosition - offset,
-        behavior: 'smooth'
-      });
-    }
-  };
-
   return (
     <section 
       id="hero" 
@@ -81,27 +69,112 @@ const Hero = () => {
         backgroundPosition: 'center'
       }}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 z-10">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+          <div className="flex-1 text-center lg:text-left mt-24 lg:mt-0">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-playfair mb-6">
           Experience Luxury Living at <span className="text-gold">Ambience Creacions</span>
         </h1>
-        
         <p className="text-xl md:text-2xl mb-4">
           Premium Residential Apartments in Sector 22, Gurugram
         </p>
-        
-        <p className="text-lg mb-10 max-w-2xl mx-auto">
+            <p className="text-lg mb-10 max-w-2xl mx-auto lg:mx-0">
           Where Comfort Meets Luxury - Discover Your Dream Home
         </p>
-        
-        <Button 
-          onClick={onBookSiteVisit || scrollToContact}
-          className="luxury-button text-lg"
-        >
-          Book a Site Visit
+          </div>
+          <div className="flex-1 w-full max-w-md bg-white bg-opacity-90 rounded-lg shadow-lg p-8 text-gray-900">
+            <h2 className="text-2xl font-bold mb-4 text-center text-gold">Inquire Now</h2>
+            <Form {...siteVisitForm}>
+              <form onSubmit={siteVisitForm.handleSubmit(onSiteVisitSubmit)} className="space-y-4">
+                <FormField
+                  control={siteVisitForm.control}
+                  name="name"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Full Name</FormLabel>
+                      <FormControl>
+                        <Input placeholder="John Doe" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={siteVisitForm.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Email Address</FormLabel>
+                      <FormControl>
+                        <Input type="email" placeholder="you@example.com" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={siteVisitForm.control}
+                  name="phone"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Phone Number</FormLabel>
+                      <FormControl>
+                        <Input placeholder="+91 9XXXXXXXXX" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={siteVisitForm.control}
+                  name="interestedIn"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Interested In</FormLabel>
+                      <Select onValueChange={field.onChange} defaultValue={field.value}>
+                        <FormControl>
+                          <SelectTrigger>
+                            <SelectValue placeholder="Select apartment type" />
+                          </SelectTrigger>
+                        </FormControl>
+                        <SelectContent>
+                          <SelectItem value="2bhk">2 BHK Apartment</SelectItem>
+                          <SelectItem value="3bhk">3 BHK Apartment</SelectItem>
+                          <SelectItem value="4bhk">4 BHK Apartment</SelectItem>
+                          <SelectItem value="penthouse">Penthouse</SelectItem>
+                          <SelectItem value="general">General Information</SelectItem>
+                        </SelectContent>
+                      </Select>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={siteVisitForm.control}
+                  name="message"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Message (Optional)</FormLabel>
+                      <FormControl>
+                        <Textarea 
+                          placeholder="Any specific requirements or preferred visit time?" 
+                          className="resize-none" 
+                          rows={3}
+                          {...field} 
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <Button type="submit" className="luxury-button w-full mt-2">
+                  Inquire Now
         </Button>
+              </form>
+            </Form>
+          </div>
+        </div>
       </div>
-      
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
         <a 
           href="#about" 
